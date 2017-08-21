@@ -1,4 +1,4 @@
 baseURL = "http://blog.u31.fr/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Blog31"
 theme = "Figures"

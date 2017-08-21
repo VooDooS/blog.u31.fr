@@ -1,35 +1,37 @@
+.post-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+}
+
 .post-header {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
+    flex: 0 0 auto;
+    background-color: red;
 }
 
-
-#post {
-    height: 100%;
-    padding-top: 0rem;
-    padding-bottom: 0rem;
+.post-header .hero-body {
+    padding: 1rem;
 }
-
-#post .columns {
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-    height: 100%;
+.post-row {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 auto;
+    padding: 0;
+    margin: 0;
 }
-
-#left-column {
-    height: 100%;
+.post-aside {
+    flex: 1 0 auto;
     overflow-y: scroll;
-    padding-top: 11rem;
-    margin-bottom: 0;
+    width: 50%;
+    margin: 0 !important;
+    padding: 2rem;
 }
-
-#right-column {
-    height: 100%;
-    overflow-y: scroll;
+.post-aside-1 {
 }
-
-#right-column .filler {
+.post-aside-2 {
+    /*background-color: #f4f4f4;*/
+}
+.post-aside-2 .filler {
     height: 50%;
 }
 
@@ -81,4 +83,14 @@ figure.code a.btn-copy {
 }
 .code-btn .txt {
     margin-left: 0.5rem;
+}
+
+
+/* Mobile last... */
+
+@media all and (max-width: 768px) {
+    .post-aside{
+        width: 100%;
+        overflow: visible;
+    }
 }

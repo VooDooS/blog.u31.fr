@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width" /> 
     <title>Meta journal : creating a Hugo static blog</title>
     <script language="JavaScript" src="http://blog.u31.fr//js/jquery-3.2.1.min.js"></script>
     <script language="JavaScript" src="http://blog.u31.fr//js/main.js"></script>
-    <script language="JavaScript" charset="utf-8" src="http://blog.u31.fr//js/highlight.js.min.js"></script>
+    <script language="JavaScript" charset="utf-8" src="http://blog.u31.fr//js/highlight.js.min.js"></script> 
     <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/bulma.min.css" />
     <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/dracula.css" />
     <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/main.css" />
@@ -13,6 +14,7 @@
 </head>
 <body>
 <script>hljs.initHighlightingOnLoad();</script>
+<div class="post-wrapper">
 <section class="hero is-primary post-header">
     <div class="hero-body">
         <div class="container">
@@ -20,14 +22,13 @@
                 Meta journal : creating a Hugo static blog
             </h1>
             <h2 class="subtitle">
-                Sun, Aug 20, 2017
+                Sun, Aug 20, 2017small
             </h2>
         </div>
     </div>
 </section>
-<section id="post" class="section">
-<div class="columns">
-    <div id="left-column" class="column content" onscroll="centerFigure();">
+<section id="post" class="section post-row">
+    <div id="left-column" class="post-aside post-aside-1 content" onscroll="centerFigure();">
         
 
 <h1 id="introduction">Introduction</h1>
@@ -80,17 +81,27 @@
 
 <p>Let&rsquo;s create a new site  and a new theme :
 
-<a class="button code-btn is-info is-outlined is-small" onclick="flash('0cc6b295517b3d364a7384042ce3ca20');">
+<a class="button code-btn is-info is-outlined is-small is-hidden-mobile" onclick="flash('0cc6b295517b3d364a7384042ce3ca20');">
     <span data-id="0cc6b295517b3d364a7384042ce3ca20" class="code-handle icon">
         <i class="fa fa-code"></i>
     </span>
     <span class="txt">CODE</span>
 </a>
-<div data-id="0cc6b295517b3d364a7384042ce3ca20" class="floating-code">
+<figure class="code card is-hidden-tablet">
+    <div class="card-content">
+        <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
+        <pre><code  class="bash"># Create a folder names mySite with the skeleton inside :
+hugo new site mySite
+# Create a new theme myTheme in the Themes directory :
+hugo new theme myTheme
+</code></pre>
+    </div>
+</figure>
+<div data-id="0cc6b295517b3d364a7384042ce3ca20" class="floating-code is-hidden-mobile">
     <figure class="code card">
         <div class="card-content">
             <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-            <pre><code class="bash"># Create a folder names mySite with the skeleton inside :
+            <pre><code  class="bash"># Create a folder names mySite with the skeleton inside :
 hugo new site mySite
 # Create a new theme myTheme in the Themes directory :
 hugo new theme myTheme
@@ -111,14 +122,13 @@ hugo new theme myTheme
 <p>This will create the <code>content/post/hello.md</code> file with some basic metadata in it, including a &ldquo;draft&rdquo; flag.</p>
 
     </div>
-    <div id="right-column" class="column">
+    <div id="right-column" class="post-aside post-aside-2 is-hidden-mobile">
         <div class="filler">&nbsp;</div>
         <div class="filler">&nbsp;</div>
     </div>
-</div>
     </section>
 
 <script language="JavaScript" src="http://blog.u31.fr//js/code.js"></script>
-
+</div>
 </body>
 </html>

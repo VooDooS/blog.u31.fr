@@ -1,22 +1,19 @@
-{{ $h := md5 .Inner }}
-<a class="button code-btn is-info is-outlined is-small is-hidden-mobile" onclick="flash('{{ $h }}');">
-    <span data-id="{{ $h }}" class="code-handle icon">
-        <i class="fa fa-code"></i>
+<a {{ $h := md5 .Inner }} class="button code-btn is-info is-outlined is-small" onclick="flash('{{ $h }}');">
+    <span class="txt">{{ .Get 0 }}</span>
+        <span data-id="{{ $h }}" class="code-handle icon">
+        <i class="fa fa-code is-hidden-mobile"></i>
     </span>
-    <span class="txt">CODE</span>
-</a>
-<figure class="code card is-hidden-tablet">
+</a><figure class="code card is-hidden-tablet">
     <div class="card-content">
         <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-        <pre><code {{ if len .Params | eq 2 }}{{ with .Get 1 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}</code></pre>
+        <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}</code></pre>
     </div>
-</figure>
-<div data-id="{{ $h }}" class="floating-code is-hidden-mobile">
+</figure><div data-id="{{ $h }}" class="floating-code is-hidden-mobile">
     <figure class="code card">
         <div class="card-content">
             <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-            <pre><code {{ if len .Params | eq 2 }}{{ with .Get 1 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}</code></pre>
-            {{ with .Get 0 }}<figcaption class="content">{{ . }}</figcaption>{{ end }}
+            <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}</code></pre>
+            {{ with .Get 1 }}<figcaption class="content">{{ . }}</figcaption>{{ end }}
         </div>
     </figure>
 </div>

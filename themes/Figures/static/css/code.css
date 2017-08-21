@@ -79,10 +79,16 @@ figure.code a.btn-copy {
 }
 
 .code-btn {
-    padding-left: 1rem;
+    padding: 0.6rem;
+    padding-right: 1rem;
+    position: relative;
+    top: -0.05rem;
 }
 .code-btn .txt {
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    position: relative;
+    top: -0.05rem;;
 }
 
 
@@ -92,5 +98,13 @@ figure.code a.btn-copy {
     .post-aside{
         width: 100%;
         overflow: visible;
+    }
+    .code-btn, .code-btn:hover, .code-btn:active, .code-btn:visited  {
+        padding: 0;
+        cursor: default !important;
+        color: #4a4a4a !important;
+        border: none !important;
+        background: none !important;
+        box-shadow: none !important;
     }
 }
