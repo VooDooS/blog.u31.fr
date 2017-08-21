@@ -6,13 +6,13 @@
 </a><figure class="code card is-hidden-tablet">
     <div class="card-content">
         <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-        <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}</code></pre>
-    </div>
+        <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}<!--{{ highlight .Inner (.Get 2) "" }}--></code></pre>
+    </div><!-- THE HIGHLIGHT API CHANGED BUT THE DOC HAS NOT BEEN UPDATED...... -->
 </figure><div data-id="{{ $h }}" class="floating-code is-hidden-mobile">
     <figure class="code card">
         <div class="card-content">
             <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-            <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}</code></pre>
+            <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}<!--{{ highlight .Inner (.Get 2) "" }}--></code></pre>
             {{ with .Get 1 }}<figcaption class="content">{{ . }}</figcaption>{{ end }}
         </div>
     </figure>

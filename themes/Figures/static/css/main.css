@@ -14,3 +14,25 @@ pre {
 .hero {
     text-align: center !important;
 }
+
+.main {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/** NAV **/
+@media screen and (min-width: 768px) {
+    .navbar {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom: solid 1px #4a4a4a;
+        border-right: solid 3px #4a4a4a;
+        border-left: solid 3px #4a4a4a;
+        overflow: hidden;
+
+    }
+}

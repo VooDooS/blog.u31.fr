@@ -43,7 +43,7 @@ You can test your installation with the `hugo version` command.
 
 # Hello world
 
-Let's create a {{< codecard "new site and theme." "Creation commands" bash >}}# Create a folder names mySite with the skeleton inside :
+Let's create a {{< codecard "new site and theme." "Creation commands" shell >}}# Create a folder names mySite with the skeleton inside :
 hugo new site mySite
 # Create a new theme myTheme in the Themes directory :
 hugo new theme myTheme
@@ -51,7 +51,7 @@ hugo new theme myTheme
 
 When initializing the site Hugo created a config file, you should at list correct the name of your website and add the customized theme. A complete list of option is available here (https://gohugo.io/getting-started/configuration/#all-variables-yaml).
 
-Here is my {{< codecard "configuration file." "Hugo's configuration file in toml" toml >}}baseURL = "http://blog.u31.fr/"
+Here is my {{< codecard "configuration file." "Hugo's configuration file in toml" yaml >}}baseURL = "http://blog.u31.fr/"
 languageCode = "en-us"
 title = "Blog31"
 theme = "Figures"{{< /codecard >}}
