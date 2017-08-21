@@ -3,12 +3,12 @@
  */
 
 $( document ).ready(function() {
-    $("#right-column .filler:last").before($(".floating-code"));
+    $(".post-aside-2 .filler:last").before($(".floating-code"));
 });
 
 
 function centerFigure(force, did) {
-    rc = $("#right-column");
+    rc = $(".post-aside-2");
     $(".code-handle").each(function(i) {
         ch =$(this);
         wh = $(window).height();
@@ -23,7 +23,7 @@ function centerFigure(force, did) {
             //document.getElementById("right-column").scrollTop += cb.offset().top - ($(window).height() / 2 - cb.height()/2);
             newST = rc.scrollTop() + cb.position().top - ($(window).height() / 2 - cb.height() / 2);// - ($(window).height() / 2 - cb.height() / 2);
             //alert(newST);
-            $("#right-column").stop().animate({scrollTop: newST}, 500, 'swing', function () {
+            $(".post-aside-2").stop().animate({scrollTop: newST}, 500, 'swing', function () {
                 //alert("Finished animating");
             });
         }

@@ -1,5 +1,5 @@
 {{ partial "header.html" . }}
-<div class="post-box">
+<div class="post-wrapper">
 <section class="hero is-primary post-header">
     <div class="hero-body">
         <div class="container">
@@ -12,16 +12,14 @@
         </div>
     </div>
 </section>
-<section id="post" class="section">
-<div class="columns">
-    <div id="left-column" class="column content" onscroll="centerFigure();">
+<section id="post" class="section post-row">
+    <div id="left-column" class="post-aside post-aside-1 content" onscroll="centerFigure();">
         {{ .Content }}
     </div>
-    <div id="right-column" class="column is-hidden-mobile">
+    <div id="right-column" class="post-aside post-aside-2 is-hidden-mobile">
         <div class="filler">&nbsp;</div>
         <div class="filler">&nbsp;</div>
     </div>
-</div>
     </section>
 
 <script language="JavaScript" src="{{ .Site.BaseURL }}/js/code.js"></script>

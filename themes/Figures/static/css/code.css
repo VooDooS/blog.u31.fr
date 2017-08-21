@@ -1,46 +1,37 @@
-.post-box {
-    /*display: flex;
-    flex-flow: column;*/
+.post-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
     height: 100%;
 }
+
 .post-header {
-    /*display: flex;
-    flex: 0 1 auto;*/
-    position: absolute;
-    z-index: 1;
-    width: 100%;
+    flex: 0 0 auto;
+    background-color: red;
 }
+
 .post-header .hero-body {
     padding: 1rem;
 }
-
-#post {
-    /*display: flex;
-    flex: 1 1 auto;*/
-    height: 100%;
-    padding-top: 0rem;
-    padding-bottom: 0rem;
+.post-row {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 auto;
+    padding: 0;
+    margin: 0;
 }
-
-#post .columns {
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-    height: 100%;
-}
-
-#left-column {
-    height: 100%;
+.post-aside {
+    flex: 1 0 auto;
     overflow-y: scroll;
-    padding-top: 7rem;
-    margin-bottom: 0;
+    width: 50%;
+    margin: 0 !important;
+    padding: 2rem;
 }
-
-#right-column {
-    height: 100%;
-    overflow-y: scroll;
+.post-aside-1 {
 }
-
-#right-column .filler {
+.post-aside-2 {
+    /*background-color: #f4f4f4;*/
+}
+.post-aside-2 .filler {
     height: 50%;
 }
 
@@ -96,13 +87,10 @@ figure.code a.btn-copy {
 
 
 /* Mobile last... */
-@media screen and (max-width: 768px) {
-    .post-header {
-        position: static;
-    }
-    #left-column {
-        padding-top: 1rem;
-        overflow-y: visible;
-        height:auto;
+
+@media all and (max-width: 768px) {
+    .post-aside{
+        width: 100%;
+        overflow: visible;
     }
 }
