@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meta journal : creating a Hugo static blog</title>
+    <script language="JavaScript" src="http://blog.u31.fr//js/jquery-3.2.1.min.js"></script>
+    <script language="JavaScript" src="http://blog.u31.fr//js/main.js"></script>
+    <script language="JavaScript" charset="utf-8" src="http://blog.u31.fr//js/highlight.js.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/bulma.min.css" />
+    <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/dracula.css" />
+    <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/main.css" />
+    <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/code.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+<script>hljs.initHighlightingOnLoad();</script>
+<section class="hero is-primary post-header">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Meta journal : creating a Hugo static blog
+            </h1>
+            <h2 class="subtitle">
+                Sun, Aug 20, 2017
+            </h2>
+        </div>
+    </div>
+</section>
+<section id="post" class="section">
+<div class="columns">
+    <div id="left-column" class="column content" onscroll="centerFigure();">
+        
+
+<h1 id="introduction">Introduction</h1>
+
+<p>In this journal I will describe the creation process if this very blog. I have been tinkering with web technology for a long time. My first website was a simple static HTML page with fancy colors, tables and horizontal bars. Then I started to create  my own php-powered dynamic sites before moving to Symfony. More recently I experimented with various heavy duty CMS such as Drupal, Rails and Wordpress . For this blog I started my journey over, using simple static HTML again.</p>
+
+<p>How ironic ! Static pages are coming back, a part pf our hipster-retro degenerescence ? Static site generator became very popular during the last few years and are packed with many great features. In fact, the progress of HTML5 and Javascript make static pages a lot less static than before and we will see how even integrate a comment system to our post pages.</p>
+
+<p>I&rsquo;m collecting the data I learned making this blog, but I&rsquo;m no expert of static site generation. If you find mistakes or have nifty tricks to share, please do use the comments to notify overs !</p>
+
+<p>But enough chit-chat, here is our roadmap :</p>
+
+<ul>
+<li>Choosing an engine</li>
+<li>Basic installation</li>
+<li>Adding some fancy features (color syntaxing and latex display)</li>
+<li>Creating a custom theme</li>
+<li>Going to production</li>
+</ul>
+
+<h1 id="choosing-an-engine">Choosing an engine</h1>
+
+<p>The obvious (and probably among the best) option is Jekyll. It&rsquo;s the most famous and widely used one. Furthermore it&rsquo;s tightly integrated to GitHub as a generator for GitHub hosted pages.</p>
+
+<p>Hugo easier install, no need for ruby (but python for syntax higlight). Easier worflow according to several sources. But less documented, smaller community. Curious about Go.</p>
+
+<p>List of relevant blog posts :</p>
+
+<ul>
+<li><a href="https://opensource.com/article/17/5/hugo-vs-jekyll">https://opensource.com/article/17/5/hugo-vs-jekyll</a></li>
+</ul>
+
+<h1 id="installation">Installation</h1>
+
+<p>There are extensive instruction for MacOs, Linux and Windows installations in the official documentation. I will only focus on installing over Debian stable in this tutorial.</p>
+
+<p>I&rsquo;m under Debian Stretch (actual stable version) which is supporting Snap packages. If you don&rsquo;t have Snap installed use :
+ <pre><code class="bash">apt-get install snapd</code></pre>
+</p>
+
+<p>And then install Hugo with :
+ <pre><code class="bash">snap install hugo</code></pre>
+</p>
+
+<p>If your system does not support Snap, you can dowload a pre-compiled binary from the latest release (<a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a>) or compile Hugo yourself from source (<a href="https://github.com/gohugoio/hugo">https://github.com/gohugoio/hugo</a>).</p>
+
+<p>You can test your installation with the <code>hugo version</code> command.</p>
+
+<h1 id="hello-world">Hello world</h1>
+
+<p>Let&rsquo;s create a new site  and a new theme :
+
+<a class="button code-btn is-info is-outlined is-small" onclick="flash('0cc6b295517b3d364a7384042ce3ca20');">
+    <span data-id="0cc6b295517b3d364a7384042ce3ca20" class="code-handle icon">
+        <i class="fa fa-code"></i>
+    </span>
+    <span class="txt">CODE</span>
+</a>
+<div data-id="0cc6b295517b3d364a7384042ce3ca20" class="floating-code">
+    <figure class="code card">
+        <div class="card-content">
+            <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
+            <pre><code class="bash"># Create a folder names mySite with the skeleton inside :
+hugo new site mySite
+# Create a new theme myTheme in the Themes directory :
+hugo new theme myTheme
+</code></pre>
+            <figcaption class="content">Creation commands</figcaption>
+        </div>
+    </figure>
+</div>
+</p>
+
+<p>When initializing the site Hugo created a config file, you should at list correct the name of your website and add the customized theme. A complete list of option is available here (<a href="https://gohugo.io/getting-started/configuration/#all-variables-yaml">https://gohugo.io/getting-started/configuration/#all-variables-yaml</a>).</p>
+
+<p>Now we add some content to be shown by creating our first post :</p>
+
+<pre><code>hugo new post/hello.md
+</code></pre>
+
+<p>This will create the <code>content/post/hello.md</code> file with some basic metadata in it, including a &ldquo;draft&rdquo; flag.</p>
+
+    </div>
+    <div id="right-column" class="column">
+        <div class="filler">&nbsp;</div>
+        <div class="filler">&nbsp;</div>
+    </div>
+</div>
+    </section>
+
+<script language="JavaScript" src="http://blog.u31.fr//js/code.js"></script>
+
+</body>
+</html>

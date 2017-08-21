@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://blog.u31.fr/about/</loc>
+    <lastmod>2017-08-20T15:00:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.u31.fr/</loc>
+    <lastmod>2017-08-20T15:00:28+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.u31.fr/posts/hello/</loc>
+    <lastmod>2017-08-20T14:18:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.u31.fr/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.u31.fr/posts/</loc>
+    <lastmod>2017-08-20T14:18:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.u31.fr/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

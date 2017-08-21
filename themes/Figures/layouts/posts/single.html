@@ -1,0 +1,29 @@
+{{ partial "header.html" . }}
+<div class="post-box">
+<section class="hero is-primary post-header">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                {{ .Title }}
+            </h1>
+            <h2 class="subtitle">
+                {{ .Date.Format "Mon, Jan 2, 2006" }}small
+            </h2>
+        </div>
+    </div>
+</section>
+<section id="post" class="section">
+<div class="columns">
+    <div id="left-column" class="column content" onscroll="centerFigure();">
+        {{ .Content }}
+    </div>
+    <div id="right-column" class="column is-hidden-mobile">
+        <div class="filler">&nbsp;</div>
+        <div class="filler">&nbsp;</div>
+    </div>
+</div>
+    </section>
+
+<script language="JavaScript" src="{{ .Site.BaseURL }}/js/code.js"></script>
+</div>
+{{ partial "footer.html" . }}

@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+pre {
+    padding: 0 !important;
+    border-radius: 5px;
+}
