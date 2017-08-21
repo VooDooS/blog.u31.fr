@@ -13,15 +13,24 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
+<script>hljs.initHighlightingOnLoad();</script>
 <div class="post-wrapper">
 <section class="hero is-primary post-header">
     <div class="hero-body">
         <div class="container">
+            <a class="icon back-icon" href="http://blog.u31.fr/">
+                <i class="fa fa-chevron-left"></i>
+            </a>
             <h1 class="title">
-                Meta journal : creating a Hugo static blog
+                <span class="inline-img big is-hidden-mobile">
+                    <img src="http://blog.u31.fr//images/blog31-logo.png" />
+                </span>
+                <span class="inline-img medium is-hidden-tablet">
+                    <img src="http://blog.u31.fr//images/blog31-logo.png" />
+                </span>Meta journal : creating a Hugo static blog
             </h1>
             <h2 class="subtitle">
-                Sun, Aug 20, 2017small
+                Sun, Aug 20, 2017
             </h2>
         </div>
     </div>
@@ -86,7 +95,7 @@
 </a><figure class="code card is-hidden-tablet">
     <div class="card-content">
         <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-        <pre><code  class="bash"># Create a folder names mySite with the skeleton inside :
+        <pre><code  class="shell"># Create a folder names mySite with the skeleton inside :
 hugo new site mySite
 # Create a new theme myTheme in the Themes directory :
 hugo new theme myTheme
@@ -96,7 +105,7 @@ hugo new theme myTheme
     <figure class="code card">
         <div class="card-content">
             <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-            <pre><code  class="bash"># Create a folder names mySite with the skeleton inside :
+            <pre><code  class="shell"># Create a folder names mySite with the skeleton inside :
 hugo new site mySite
 # Create a new theme myTheme in the Themes directory :
 hugo new theme myTheme
@@ -116,7 +125,7 @@ hugo new theme myTheme
 </a><figure class="code card is-hidden-tablet">
     <div class="card-content">
         <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-        <pre><code  class="toml">baseURL = "http://blog.u31.fr/"
+        <pre><code  class="yaml">baseURL = "http://blog.u31.fr/"
 languageCode = "en-us"
 title = "Blog31"
 theme = "Figures"</code></pre>
@@ -125,7 +134,7 @@ theme = "Figures"</code></pre>
     <figure class="code card">
         <div class="card-content">
             <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-            <pre><code  class="toml">baseURL = "http://blog.u31.fr/"
+            <pre><code  class="yaml">baseURL = "http://blog.u31.fr/"
 languageCode = "en-us"
 title = "Blog31"
 theme = "Figures"</code></pre>

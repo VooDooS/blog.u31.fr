@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ .Site.BaseURL }}">
-            <img src="{{ .Site.BaseURL }}/images/blog31-logo.png" alt="Code31, yet another code blog" width="112" height="28">
+            <img src="{{ .Site.BaseURL }}/images/blog31-logo.png" alt="Code31, yet another code blog" class="logo">
         </a>
 
         <div class="navbar-burger"  data-target="navMenu">
@@ -12,15 +12,11 @@
     </div>
     <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
-            <a class="navbar-item is-hidden-mobile" href="{{ .Site.BaseURL }}">
-                Home
-            </a>
+            <a class="navbar-item" href="{{ .Site.BaseURL }}">BLOG</a>
 
             {{ range .Data.Pages }}
             {{ if eq .Type "page" }}
-            <a class="navbar-item is-hidden-mobile" href="{{ .Permalink }}">
-                {{ .Title }}
-            </a>
+            <a class="navbar-item" href="{{ .Permalink }}">{{ .Title }}</a>
             {{ end }}
             {{ end }}
         </div>

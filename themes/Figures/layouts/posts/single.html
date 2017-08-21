@@ -1,17 +1,6 @@
 {{ partial "header.html" . }}
 <div class="post-wrapper">
-<section class="hero is-primary post-header">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">
-                {{ .Title }}
-            </h1>
-            <h2 class="subtitle">
-                {{ .Date.Format "Mon, Jan 2, 2006" }}small
-            </h2>
-        </div>
-    </div>
-</section>
+{{ partial "hero.html" . }}
 <section id="post" class="section post-row">
     <div id="left-column" class="post-aside post-aside-1 content" onscroll="centerFigure();">
         {{ .Content }}
