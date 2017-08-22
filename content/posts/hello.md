@@ -39,13 +39,13 @@ And then install Hugo with :
 
 {{< code bash >}}snap install hugo{{< /code >}}
 
-If your system does not support Snap, you can dowload a pre-compiled binary from the latest release (https://github.com/gohugoio/hugo/releases) or compile Hugo yourself from source (https://github.com/gohugoio/hugo).
+If your system does not support Snap, you can dowload a pre-compiled binary from the [latest release](https://github.com/gohugoio/hugo/releases) or compile Hugo yourself from [source](https://github.com/gohugoio/hugo).
 
 You can test your installation with the `hugo version` command.
 
 # Hello world
 
-Let's create a {{< codecard "new site and theme." "Creation commands" shell >}}# Create a folder names mySite with the skeleton inside :
+Let's create a {{< codecard "new site and theme." "Creation commands" shell >}}# Create a folder named mySite with the skeleton inside :
 hugo new site mySite
 # Create a new theme myTheme in the Themes directory :
 hugo new theme myTheme

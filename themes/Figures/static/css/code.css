@@ -58,10 +58,12 @@ figure.code {
 
 figure.code .card-content {
     padding: 0rem;
+    text-align: left;
 }
 
-figure.code figcaption {
-    margin: 1.5rem;
+figure.code div.content {
+    padding: 0.5rem;
+    padding-left: 1.5rem;
 }
 
 figure.code .hljs {
@@ -71,7 +73,7 @@ figure.code .hljs {
 figure.code a.btn-copy {
     position: absolute;
     right: 0;
-    border-radius: 0px 0px 0px 10px;
+    border-radius: 0px 10px 0px 10px;
     border-top: 0px;
     border-right: 0px;
     border-bottom: 0px solid;

@@ -7,11 +7,12 @@
     <script src="{{ .Site.BaseURL }}/js/jquery-3.2.1.min.js"></script>
     <script src="{{ .Site.BaseURL }}/js/main.js"></script>
     <script charset="utf-8" src="{{ .Site.BaseURL }}/js/highlight.js.min.js"></script> <!-- Weird ut8 needed -->
-    <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/bulma.min.css" />
+    <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.min.css" />
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/dracula.css" />
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css" />
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/code.css" />
+    <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/research.css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
-<body>
+<body {{ with .Params.bodyclass }} class="{{ . }}" {{ end }}>
 <script>hljs.initHighlightingOnLoad();</script>

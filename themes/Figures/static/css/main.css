@@ -28,7 +28,7 @@ pre {
 .inline-img.big  {
     float: left;
     margin-right: 1rem;
-    bottom: -0.5rem;
+    bottom: -0.2rem;
 }
 .inline-img.big img {
     height: 3.5rem;
@@ -80,7 +80,7 @@ pre {
     color: #00d1b2;
     filter: brightness(0.6);
     position: relative;
-    top: 0.4rem;
+    top: 0.1rem;
 }
 
 .main {

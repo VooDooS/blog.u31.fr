@@ -1,5 +1,8 @@
 baseURL = "http://blog.u31.fr/"
 languageCode = "en-us"
 title = "Blog31"
-theme = "Figures"
-pygmentsUseClasses="true"
+theme = "figures"
+
+[blackfriday]
+extensions = ["hardLineBreak"] # Github flavor linebreaks
+hrefTargetBlank = true
