@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" /> <!-- Needed for Media queries to work -->
     <title>{{ .Title }}</title>
-    <script language="JavaScript" src="{{ .Site.BaseURL }}/js/jquery-3.2.1.min.js"></script>
-    <script language="JavaScript" src="{{ .Site.BaseURL }}/js/main.js"></script>
-    <script language="JavaScript" charset="utf-8" src="{{ .Site.BaseURL }}/js/highlight.js.min.js"></script> <!-- Weird ut8 needed -->
+    <script src="{{ .Site.BaseURL }}/js/jquery-3.2.1.min.js"></script>
+    <script src="{{ .Site.BaseURL }}/js/main.js"></script>
+    <script charset="utf-8" src="{{ .Site.BaseURL }}/js/highlight.js.min.js"></script> <!-- Weird ut8 needed -->
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/bulma.min.css" />
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/dracula.css" />
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css" />

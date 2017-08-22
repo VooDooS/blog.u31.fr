@@ -1,5 +1,5 @@
 ---
-title: "Meta journal : creating a Hugo static blog"
+title: "Creating a Hugo static blog, part I"
 date: 2017-08-20T14:18:00+02:00
 draft: true
 ---
@@ -32,9 +32,11 @@ List of relevant blog posts :
 There are extensive instruction for MacOs, Linux and Windows installations in the official documentation. I will only focus on installing over Debian stable in this tutorial.
 
 I'm under Debian Stretch (actual stable version) which is supporting Snap packages. If you don't have Snap installed use :
+
 {{< code bash >}}apt-get install snapd{{< /code >}}
 
 And then install Hugo with :
+
 {{< code bash >}}snap install hugo{{< /code >}}
 
 If your system does not support Snap, you can dowload a pre-compiled binary from the latest release (https://github.com/gohugoio/hugo/releases) or compile Hugo yourself from source (https://github.com/gohugoio/hugo).

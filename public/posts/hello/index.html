@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" /> 
-    <title>Meta journal : creating a Hugo static blog</title>
-    <script language="JavaScript" src="http://blog.u31.fr//js/jquery-3.2.1.min.js"></script>
-    <script language="JavaScript" src="http://blog.u31.fr//js/main.js"></script>
-    <script language="JavaScript" charset="utf-8" src="http://blog.u31.fr//js/highlight.js.min.js"></script> 
+    <title>Creating a Hugo static blog, part I</title>
+    <script src="http://blog.u31.fr//js/jquery-3.2.1.min.js"></script>
+    <script src="http://blog.u31.fr//js/main.js"></script>
+    <script charset="utf-8" src="http://blog.u31.fr//js/highlight.js.min.js"></script> 
     <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/bulma.min.css" />
     <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/dracula.css" />
     <link type="text/css" rel="stylesheet" href="http://blog.u31.fr//css/main.css" />
@@ -17,17 +18,19 @@
 <div class="post-wrapper">
 <section class="hero is-primary post-header">
     <div class="hero-body">
-        <div class="container">
-            <a class="icon back-icon" href="http://blog.u31.fr/">
-                <i class="fa fa-chevron-left"></i>
-            </a>
-            <h1 class="title">
+        <div class="c-arrow">
+        <a class="icon back-icon" href="http://blog.u31.fr/">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+            </div>
+        <div class="c-title">
                 <span class="inline-img big is-hidden-mobile">
-                    <img src="http://blog.u31.fr//images/blog31-logo.png" />
+                    <img src="http://blog.u31.fr//images/code31-logo.png" alt="Blog 31" />
                 </span>
                 <span class="inline-img medium is-hidden-tablet">
-                    <img src="http://blog.u31.fr//images/blog31-logo.png" />
-                </span>Meta journal : creating a Hugo static blog
+                    <img src="http://blog.u31.fr//images/code31-logo.png" alt="Blog 31" />
+                </span>
+            <h1 class="title">Creating a Hugo static blog, part I
             </h1>
             <h2 class="subtitle">
                 Sun, Aug 20, 2017
@@ -73,13 +76,15 @@
 
 <p>There are extensive instruction for MacOs, Linux and Windows installations in the official documentation. I will only focus on installing over Debian stable in this tutorial.</p>
 
-<p>I&rsquo;m under Debian Stretch (actual stable version) which is supporting Snap packages. If you don&rsquo;t have Snap installed use :
- <pre><code class="bash">apt-get install snapd</code></pre>
-</p>
+<p>I&rsquo;m under Debian Stretch (actual stable version) which is supporting Snap packages. If you don&rsquo;t have Snap installed use :</p>
 
-<p>And then install Hugo with :
+ <pre><code class="bash">apt-get install snapd</code></pre>
+
+
+<p>And then install Hugo with :</p>
+
  <pre><code class="bash">snap install hugo</code></pre>
-</p>
+
 
 <p>If your system does not support Snap, you can dowload a pre-compiled binary from the latest release (<a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a>) or compile Hugo yourself from source (<a href="https://github.com/gohugoio/hugo">https://github.com/gohugoio/hugo</a>).</p>
 
@@ -110,7 +115,7 @@ hugo new site mySite
 # Create a new theme myTheme in the Themes directory :
 hugo new theme myTheme
 </code></pre>
-            <figcaption class="content">Creation commands</figcaption>
+            <span class="content">Creation commands</span>
         </div>
     </figure>
 </div></p>
@@ -138,7 +143,7 @@ theme = "Figures"</code></pre>
 languageCode = "en-us"
 title = "Blog31"
 theme = "Figures"</code></pre>
-            <figcaption class="content">Hugo&#39;s configuration file in toml</figcaption>
+            <span class="content">Hugo&#39;s configuration file in toml</span>
         </div>
     </figure>
 </div></p>
@@ -157,7 +162,7 @@ theme = "Figures"</code></pre>
     </div>
     </section>
 
-<script language="JavaScript" src="http://blog.u31.fr//js/code.js"></script>
+<script src="http://blog.u31.fr//js/code.js"></script>
 </div>
 </body>
 </html>

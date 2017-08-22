@@ -1,16 +1,18 @@
 <section class="hero is-primary post-header">
     <div class="hero-body">
-        <div class="container">
-            <a class="icon back-icon" href="{{ .Site.BaseURL }}">
-                <i class="fa fa-chevron-left"></i>
-            </a>
-            <h1 class="title">
+        <div class="c-arrow">
+        <a class="icon back-icon" href="{{ .Site.BaseURL }}">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+            </div>
+        <div class="c-title">
                 <span class="inline-img big is-hidden-mobile">
-                    <img src="{{ .Site.BaseURL }}/images/blog31-logo.png" />
+                    <img src="{{ .Site.BaseURL }}/images/code31-logo.png" alt="Blog 31" />
                 </span>
                 <span class="inline-img medium is-hidden-tablet">
-                    <img src="{{ .Site.BaseURL }}/images/blog31-logo.png" />
-                </span>{{ .Title }}
+                    <img src="{{ .Site.BaseURL }}/images/code31-logo.png" alt="Blog 31" />
+                </span>
+            <h1 class="title">{{ .Title }}
             </h1>
             <h2 class="subtitle">
                 {{ .Date.Format "Mon, Jan 2, 2006" }}

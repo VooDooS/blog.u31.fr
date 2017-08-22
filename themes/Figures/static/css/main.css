@@ -1,5 +1,9 @@
 html, body {
     height: 100%;
+    width: 100%;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
 }
 
 .card {
@@ -24,7 +28,7 @@ pre {
 .inline-img.big  {
     float: left;
     margin-right: 1rem;
-    bottom: -0.3rem;
+    bottom: -0.5rem;
 }
 .inline-img.big img {
     height: 3.5rem;
@@ -43,22 +47,40 @@ pre {
     cursor: pointer;
 }
 
+.hero .title {
+    margin-bottom: 0rem;
+}
+
+.hero .subtitle {
+    display: inline-block;
+}
+
 .hero .back-icon {
     height: 4rem;
-    float: left;
+
     margin-right: 2rem;
     margin-left: 1rem;
 }
 
-.hero .container {
-    margin-right: 0;
-    margin-left: 0;
+.hero .hero-body {
+    display: flex;
+    align-items: center;
+}
+
+.hero .c-arrow {
+   flex-shrink: 1;
+}
+
+.hero .c-title {
+    flex-grow: 1;
 }
 
 .hero .fa {
     font-size: 3rem;
     color: #00d1b2;
     filter: brightness(0.6);
+    position: relative;
+    top: 0.4rem;
 }
 
 .main {
@@ -69,7 +91,7 @@ pre {
 
 /** NAV **/
 .navbar {
-    padding-top: 1rem;
+    padding-top: 0rem;
 }
 .navbar .navbar-menu {
     text-transform: uppercase;
@@ -95,11 +117,17 @@ pre {
     top: -0.07rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 1200px) {
+    .hero .title {
+        display: inline;
+    }
+}
+@media screen and (min-width: 1008px) {
     .navbar {
         width: 50%;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 1rem;
         /*border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         border-bottom: solid 1px #4a4a4a;

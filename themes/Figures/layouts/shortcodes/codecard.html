@@ -13,7 +13,7 @@
         <div class="card-content">
             <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
             <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}<!--{{ highlight .Inner (.Get 2) "" }}--></code></pre>
-            {{ with .Get 1 }}<figcaption class="content">{{ . }}</figcaption>{{ end }}
+            {{ with .Get 1 }}<span class="content">{{ . }}</span>{{ end }}
         </div>
     </figure>
 </div>
