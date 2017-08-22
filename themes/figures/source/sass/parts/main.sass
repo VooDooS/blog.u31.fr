@@ -1,0 +1,116 @@
+html, body
+    height: 100%
+    width: 100%
+    margin: 0
+    padding: 0
+    overflow-x: hidden
+
+.card
+    border-radius: 10px
+    overflow: hidden
+
+pre
+    padding: 0 !important
+    border-radius: 5px
+
+.inline-img
+    position: relative
+    bottom: -0.1rem
+    img
+        filter: invert(100%)
+        height: 1rem
+    &.big
+        float: left
+        margin-right: 1rem
+        bottom: -0.2rem
+        img
+            height: 3.5rem
+    &.medium
+        float: left
+        margin-right: 0.5rem
+        bottom: -0.3rem
+        img
+            height: 1.8rem
+
+.hero
+    .back-icon:hover
+        filter: brightness(0.2)
+        cursor: pointer
+    .title
+        margin-bottom: 0rem
+    .subtitle
+        display: inline-block
+    .back-icon
+        height: 4rem
+        margin-right: 2rem
+        margin-left: 1rem
+    .hero-body
+        display: flex
+        align-items: center
+    .c-arrow
+        flex-shrink: 1
+    .c-title
+        flex-grow: 1
+    .fa
+        font-size: 3rem
+        color: #00d1b2
+        filter: brightness(0.6)
+        position: relative
+        top: 0.1rem
+
+.main
+    margin-top: 2rem
+    margin-left: auto
+    margin-right: auto
+
+/** NAV *
+
+.navbar
+    padding-top: 0rem
+    .navbar-menu
+        text-transform: uppercase
+
+.navbar-item
+    &:hover
+        background-color: inherit !important
+        &:before, &:after
+            color: black
+    &:before
+        content: "{ "
+        color: transparent
+        position: relative
+        top: -0.07rem
+    &:after
+        content: " } "
+        color: transparent
+        position: relative
+        top: -0.07rem
+
+@media screen and (max-width: 1200px)
+    .hero .title
+        display: inline
+
+@media screen and (min-width: 1008px)
+    .navbar
+        width: 50%
+        margin-left: auto
+        margin-right: auto
+        padding-top: 1rem
+    /*border-bottom-left-radius: 10px;
+     *border-bottom-right-radius: 10px;
+     *border-bottom: solid 1px #4a4a4a;
+     *border-right: solid 3px #4a4a4a;
+     *border-left: solid 3px #4a4a4a;
+    .navbar-start
+        align-items: baseline
+    .navbar-menu .navbar-item
+        position: relative
+        bottom: -2.5rem
+        display: inline
+    .navbar .logo
+        height: 4rem
+        max-height: none
+
+@media screen and (max-width: 768px)
+    .is-hidden-mobile
+        display: none !important

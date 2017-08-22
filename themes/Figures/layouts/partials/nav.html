@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ .Site.BaseURL }}">
-            <img src="{{ .Site.BaseURL }}/images/code31-logo.png" alt="Code31, yet another code blog" class="logo">
+            <img src="{{ .Site.BaseURL }}images/code31-logo.png" alt="Code31, yet another code blog" class="logo">
         </a>
 
         <div class="navbar-burger"  data-target="navMenu">
@@ -13,9 +13,9 @@
     <div class="navbar-menu" id="navMenu">
         <div class="navbar-start">
             <a class="navbar-item" href="{{ .Site.BaseURL }}">BLOG</a>
-            <a class="navbar-item" href="{{ .Site.BaseURL }}/research/">RESEARCH</a>
+            <a class="navbar-item" href="{{ .Site.BaseURL }}research/">RESEARCH</a>
 
-            <a class="navbar-item" href="{{ .Site.BaseURL }}/about/">ABOUT</a>
+            <a class="navbar-item" href="{{ .Site.BaseURL }}about/">ABOUT</a>
 
 
             <!--{{ range .Data.Pages }}
@@ -26,4 +26,4 @@
         </div>
     </div>
 </nav>
-<script language="JavaScript" src="{{ .Site.BaseURL }}/js/navbar.js"></script>
+<script language="JavaScript" src="{{ .Site.BaseURL }}js/navbar.js"></script>
