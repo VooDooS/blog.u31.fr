@@ -1,7 +1,20 @@
-<nav class="navbar">
+<!--<nav class="myNav">
+    <div class="myNav-left myNav-item"><a href="{{ .Site.BaseURL }}">BLOG</a></div>
+    <div class="myNav-center myNav-item"><img src="{{ .Site.BaseURL }}images/logo.png" class="big-brand" /></div>
+    <div class="myNav-right myNav-item"><a  href="{{ .Site.BaseURL }}research/">RESEARCH</a></div>
+</nav>-->
+
+<nav class="myNav is-hidden-mobile">
+    <div class="myNav-center">
+        <a class="myNav-item" href="{{ .Site.BaseURL }}">BLOG</a>
+        <a class="myNav-item brand" href="{{ .Site.BaseURL }}"><img src="{{ .Site.BaseURL }}images/logo.png" /></a>
+        <a class="myNav-item" href="{{ .Site.BaseURL }}research/">RESEARCH</a></div>
+</nav>
+
+<nav class="navbar is-hidden-tablet">
     <div class="navbar-brand">
-        <a class="navbar-item" href="{{ .Site.BaseURL }}">
-            <img src="{{ .Site.BaseURL }}images/code31-logo.png" alt="Code31, yet another code blog" class="logo">
+       <a class="navbar-item" href="{{ .Site.BaseURL }}">
+            <img src="{{ .Site.BaseURL }}images/logosmall.png" alt="Code31, yet another code blog" class="logo">
         </a>
 
         <div class="navbar-burger"  data-target="navMenu">
@@ -11,18 +24,16 @@
         </div>
     </div>
     <div class="navbar-menu" id="navMenu">
-        <div class="navbar-start">
+        <div class="navbar-center">
             <a class="navbar-item" href="{{ .Site.BaseURL }}">BLOG</a>
             <a class="navbar-item" href="{{ .Site.BaseURL }}research/">RESEARCH</a>
-
-            <a class="navbar-item" href="{{ .Site.BaseURL }}about/">ABOUT</a>
 
 
             <!--{{ range .Data.Pages }}
             {{ if eq .Type "page" }}
             <a class="navbar-item" href="{{ .Permalink }}">{{ .Title }}</a>
             {{ end }}
-            {{ end }}-->
+            {{ end }} -->
         </div>
     </div>
 </nav>

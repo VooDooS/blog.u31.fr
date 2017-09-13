@@ -1,0 +1,7 @@
+<a {{ $h := md5 .Inner }} href="{{ .Inner }}"  data-id="{{ $h }}" data-url="{{ .Inner }}" data-title="{{ .Get 0 }}" class="floating-card-me floating-url">
+    {{ if len .Params | eq 1 }}
+    {{ .Get 0 }}
+    {{ else }}
+    {{ .Inner }}
+    {{ end }}
+</a>

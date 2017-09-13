@@ -9,7 +9,11 @@
     <script charset="utf-8" src="{{ .Site.BaseURL }}js/highlight.js.min.js"></script> <!-- Weird ut8 needed -->
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/main.min.css" />
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/dracula.css" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link  type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css" />
+    {{ if .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
 </head>
 <body {{ with .Params.bodyclass }} class="{{ . }}" {{ end }}>
-<script>hljs.initHighlightingOnLoad();</script>
+<script></script>

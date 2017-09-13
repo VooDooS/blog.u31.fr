@@ -1,4 +1,5 @@
-<a {{ $h := md5 .Inner }} class="button code-btn is-info is-outlined is-small" onclick="flash('{{ $h }}');">
+<a {{ $h := md5 .Inner }} data-id="{{ $h }}" data-description="{{ .Get 1 }}"  data-lang="{{ if len .Params | eq 3 }}{{ .Get 2 }}{{ end }}" data-code="{{- trim .Inner "\n\t " -}}"
+   class="floating-card-me floating-code button code-btn is-info is-outlined is-small" onclick="flash('{{ $h }}');">
     <span class="txt">{{ .Get 0 }}</span>
         <span data-id="{{ $h }}" class="code-handle icon">
         <i class="fa fa-code is-hidden-mobile"></i>
@@ -6,14 +7,6 @@
 </a><figure class="code card is-hidden-tablet">
     <div class="card-content">
         <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-        <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}<!--{{ highlight .Inner (.Get 2) "" }}--></code></pre>
+        <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{- trim .Inner "\n\t " -}}<!--{{ highlight .Inner (.Get 2) "" }}--></code></pre>
     </div><!-- THE HIGHLIGHT API CHANGED BUT THE DOC HAS NOT BEEN UPDATED...... -->
-</figure><div data-id="{{ $h }}" class="floating-code is-hidden-mobile">
-    <figure class="code card">
-        <div class="card-content">
-            <a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>
-            <pre><code {{ if len .Params | eq 3 }}{{ with .Get 2 }} class="{{.}}"{{ end }}{{ end }}>{{ .Inner }}<!--{{ highlight .Inner (.Get 2) "" }}--></code></pre>
-            {{ with .Get 1 }}<div class="content">{{ . }}</div>{{ end }}
-        </div>
-    </figure>
-</div>
+</figure>

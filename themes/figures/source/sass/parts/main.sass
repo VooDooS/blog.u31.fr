@@ -63,54 +63,21 @@ pre
     margin-left: auto
     margin-right: auto
 
-/** NAV *
-
-.navbar
-    padding-top: 0rem
-    .navbar-menu
-        text-transform: uppercase
-
-.navbar-item
-    &:hover
-        background-color: inherit !important
-        &:before, &:after
-            color: black
-    &:before
-        content: "{ "
-        color: transparent
+// No newlines in footnotes :
+.footnotes li
+    .footnote-return
         position: relative
-        top: -0.07rem
-    &:after
-        content: " } "
-        color: transparent
-        position: relative
-        top: -0.07rem
+        bottom: 2px
+    br
+        display: none
+
 
 @media screen and (max-width: 1200px)
     .hero .title
         display: inline
 
-@media screen and (min-width: 1008px)
-    .navbar
-        width: 50%
-        margin-left: auto
-        margin-right: auto
-        padding-top: 1rem
-    /*border-bottom-left-radius: 10px;
-     *border-bottom-right-radius: 10px;
-     *border-bottom: solid 1px #4a4a4a;
-     *border-right: solid 3px #4a4a4a;
-     *border-left: solid 3px #4a4a4a;
-    .navbar-start
-        align-items: baseline
-    .navbar-menu .navbar-item
-        position: relative
-        bottom: -2.5rem
-        display: inline
-    .navbar .logo
-        height: 4rem
-        max-height: none
 
-@media screen and (max-width: 768px)
-    .is-hidden-mobile
-        display: none !important
+@media screen and (min-width: 1008px)
+    .container
+        max-width: 65%
+        width: 65%

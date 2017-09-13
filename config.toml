@@ -1,8 +1,24 @@
+DefaultContentLanguage = "en"
+copyright = "Copyright 2017- Ulysse Gérard. All site content and code is under MIT licence."
+
 baseURL = "http://blog.u31.fr/"
-languageCode = "en-us"
+
 title = "Blog31"
 theme = "figures"
+footnotereturnlinkcontents = "&uarr;"
+
+
 
 [blackfriday]
 extensions = ["hardLineBreak"] # Github flavor linebreaks
 hrefTargetBlank = true
+
+[Languages]
+[Languages.en]
+weight = 1
+languageCode = "en-us"
+
+[Languages.fr]
+weight = 1
+title = "Français"
+languageCode = "fr-fr"

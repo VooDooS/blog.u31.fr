@@ -2,9 +2,39 @@ body.research blockquote
     // display: inline-block;
     //float: right;*/
 
+.bq-ident
+    display: flex !important
+    flex-flow: row wrap
+
+.img-ident
+    display: block
+    flex: 0 0 auto
+
+    margin: 0 !important
+    margin-left: auto !important
+    margin-right: auto !important
+    line-height: 0px
+
+    img
+        width: 150px
+        margin-left: auto
+        margin-right: auto
+
+
+.text-ident
+    margin-top: 1rem
+    display: block
+    flex: 1 1 auto
+    margin-left: 1rem
+
+
 
 @media screen and (min-width: 1008px)
     body.research blockquote
         display: inline-block
         float: right
+
+@media screen and (max-width: 768px)
+    .img-ident + h1
+        min-width: auto
 

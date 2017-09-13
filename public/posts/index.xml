@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Creating a Hugo static blog, part I</title>
-      <link>http://blog.u31.fr/posts/hello/</link>
+      <title>A Hugo static blog, part I, &#34;Hello blog !&#34;</title>
+      <link>http://blog.u31.fr/posts/hugo-part-i/</link>
       <pubDate>Sun, 20 Aug 2017 14:18:00 +0200</pubDate>
       
-      <guid>http://blog.u31.fr/posts/hello/</guid>
-      <description>Introduction In this journal I will describe the creation process if this very blog. I have been tinkering with web technology for a long time. My first website was a simple static HTML page with fancy colors, tables and horizontal bars. Then I started to create my own php-powered dynamic sites before moving to Symfony. More recently I experimented with various heavy duty CMS such as Drupal, Rails and Wordpress .</description>
+      <guid>http://blog.u31.fr/posts/hugo-part-i/</guid>
+      <description>Introduction In this journal I will describe the creation process of this very blog. I have been tinkering with web technology for a long time. My first website was a simple static HTML page with flashy colors, tables and horizontal separators. Then I started to create my own php-powered dynamic sites before moving to Symfony. More recently I experimented with various heavy duty CMS such as Drupal, Rails and Wordpress.</description>
     </item>
     
   </channel>

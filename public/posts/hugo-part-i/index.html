@@ -10,6 +10,7 @@
     <link type="text/css" rel="stylesheet" href="http://blog.u31.fr/css/main.min.css" />
     <link type="text/css" rel="stylesheet" href="http://blog.u31.fr/css/dracula.css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
 </head>
 <body >
 <script></script>
@@ -103,7 +104,7 @@
 
 <h1 id="installation">Installation</h1>
 
-<p>There are extensive instruction for MacOs, Linux and Windows installations in the official documentation. I will only focus on installing over Debian stable in this tutorial.</p>
+<p>There are <a href="https://gohugo.io/getting-started/installing/" target="_blank">extensive instructions</a> for MacOs, Linux and Windows installations in the official documentation. I will only focus on installing over Linux in this tutorial.</p>
 
 <p>I&rsquo;m under Debian Stretch (actual stable version) which is supporting Snap packages. If you don&rsquo;t have Snap installed use :</p>
 
@@ -142,15 +143,21 @@ hugo new theme myTheme
     </div>
 </figure></p>
 
-<p>When initializing the site Hugo created a config file, you should at list correct the name of your website and add the customized theme. A complete list of option is available here (<a href="https://gohugo.io/getting-started/configuration/#all-variables-yaml" target="_blank">https://gohugo.io/getting-started/configuration/#all-variables-yaml</a>).</p>
+<p>When initializing the site Hugo created a config file, you should at list correct the name of your website and add the customized theme. A complete list of option is available <a href="https://gohugo.io/getting-started/configuration/#all-variables-yaml" target="_blank">here</a>.</p>
 
-<p>Here is my <a  data-id="3ccf1efbd12f46b71d73290cb5cb1467" data-description="Hugo&#39;s configuration file in toml"  data-lang="tome" data-code="baseURL = &#34;http://blog.u31.fr/&#34;
+<p>Here is my <a  data-id="6ff5640e1a30d02d3bed26a16a454b72" data-description="Hugo&#39;s configuration file in toml"  data-lang="tome" data-code="baseURL = &#34;http://blog.u31.fr/&#34;
 languageCode = &#34;en-us&#34;
 title = &#34;Blog31&#34;
-theme = &#34;Figures&#34;"
-   class="floating-card-me floating-code button code-btn is-info is-outlined is-small" onclick="flash('3ccf1efbd12f46b71d73290cb5cb1467');">
+theme = &#34;figures&#34;
+
+[blackfriday]
+# Github like linebreaks
+extensions = [&#34;hardLineBreak&#34;]
+hrefTargetBlank = true
+"
+   class="floating-card-me floating-code button code-btn is-info is-outlined is-small" onclick="flash('6ff5640e1a30d02d3bed26a16a454b72');">
     <span class="txt">configuration file.</span>
-        <span data-id="3ccf1efbd12f46b71d73290cb5cb1467" class="code-handle icon">
+        <span data-id="6ff5640e1a30d02d3bed26a16a454b72" class="code-handle icon">
         <i class="fa fa-code is-hidden-mobile"></i>
     </span>
 </a><figure class="code card is-hidden-tablet">
@@ -159,7 +166,13 @@ theme = &#34;Figures&#34;"
         <pre><code  class="tome">baseURL = "http://blog.u31.fr/"
 languageCode = "en-us"
 title = "Blog31"
-theme = "Figures"</code></pre>
+theme = "figures"
+
+[blackfriday]
+# Github like linebreaks
+extensions = ["hardLineBreak"]
+hrefTargetBlank = true
+</code></pre>
     </div>
 </figure></p>
 
