@@ -36,6 +36,11 @@ a.img-card-link
   @extend .card-link
   @extend .is-primary
 
+  +mobile
+    display: inline
+    border: none
+    white-space: normal
+
   &:after
     @extend .icon
     @extend .fa
@@ -48,6 +53,10 @@ a.img-card-link
   + img
     display: none
     float: right
+    border-radius: 5px
+    box-shadow: 0 2px 3px rgba(10,10,10,0.1), 0 0 0 1px rgba(10,10,10,0.1)
+    margin: 1rem
+
     +mobile
       display: block
 
