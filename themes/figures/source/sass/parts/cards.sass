@@ -1,0 +1,55 @@
+/* STYLES GÉNÉRAUX */
+.card
+  margin-bottom: 3rem
+.card-content
+  padding: 0rem
+  text-align: left
+
+  .card-caption
+    padding-left: 1rem
+    padding-right: 1rem
+    padding-bottom: 0.5rem
+    font-size: 130%
+
+
+/* STYLE DES LIENS */
+.floating-url .card-content
+  padding: 0.5rem 1rem
+  font-size: 130%
+
+
+/* STYLE DES IMAGES */
+.card-link
+  @extend .button
+  @extend .is-outlined
+
+  position: relative
+  height: 1.6rem
+  top: -0.05em
+
+  padding: 0.2rem
+
+  //padding-right: 0.8rem
+  //font-size: 1rem
+
+a.img-card-link
+  @extend .card-link
+  @extend .is-primary
+
+  &:after
+    @extend .icon
+    @extend .fa
+    @extend .fa-picture-o
+    content: "\f03e"
+    position: relative
+    top: 4px
+
+
+  + img
+    display: none
+    float: right
+    +mobile
+      display: block
+
+.floating-img img
+  border-bottom: solid 1px #bebcbc

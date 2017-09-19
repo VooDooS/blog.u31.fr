@@ -2,9 +2,42 @@
  * Created by ulysse on 20/08/2017.
  */
 
-$( document ).ready(function() {
-    //$(".post-aside-2 .filler:last").before($(".floating-card"));
 
+$( document ).ready(function() {
+    var images = [];
+
+    // IMAGES
+    $(".img-card-link").each(function (i) {
+        var elt = $(this);
+
+        // For each url that should be displayed in a card :
+        var figure = $("<figure>", {'data-id': elt.data('id'), "class": "floating-card floating-img card is-hidden-mobile"});
+        var div = $("<div>", {'class': 'card-content'});
+        var img = elt.next('img').clone();
+        var url = img.attr('src');
+        var alt = img.attr('alt');
+        var a = $("<a>", {'class': 'image-pop-link', 'href': url});
+        a.append(img);
+        div.append(a);
+
+        if(alt != "") {
+            div.append($("<div class='card-caption'>").append(alt));
+        }
+
+        figure.append(div);
+
+        img.onload = function()
+        {
+            var width = this.naturalWidth;
+            alert(width);
+        }
+        // Adding the image to the image array for photoswipe gallery
+        images.push({src: img.attr('src'), w: 100, h: 100});
+
+        $(".post-aside-2 .filler:last").before(figure);
+    });
+
+    // LIENS
     $(".url-card").each(function (i) {
         var elt = $(this);
 
@@ -24,6 +57,8 @@ $( document ).ready(function() {
         $(".post-aside-2 .filler:last").before(figure);
     });
 
+
+    // CODE
     $(".floating-card-me").each (function (i) {
        var elt = $(this);
 
@@ -32,6 +67,7 @@ $( document ).ready(function() {
             var figure = $("<figure>", {'data-id': elt.data('id'), "class": "floating-card floating-url card is-hidden-mobile"});
             var div = $("<div>", {'class': 'card-content'});
             var url = elt.data('url');
+
 
             if(elt.data('title') != "") {
                 div.append(elt.data('title')+': <a href="'+url+'">'+url+'</a>');
@@ -60,15 +96,46 @@ $( document ).ready(function() {
     });
 
     // Everything's ready for highlighting :
-    $(document).ready(function() {
-        $('pre code').each(function(i, block) {
+    $('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
 
-        /*var y = document.querySelectorAll("pre code");
-        for(var i = 0; i < y.length; i++) {
-            y[i].innerHTML = y[i].innerHTML.replace("\n", "");
-        }*/
+    
+    $('.image-pop-link').magnificPopup({
+        // main options
+        type: 'image',
+
+        gallery: {
+            // options for gallery
+            enabled: true
+        },
+        closeOnBgClick: true,
+        fixedContentPos: false,
+        callbacks: {
+        open: function() {
+            jQuery('body').addClass('noscroll');
+        },
+        close: function() {
+            jQuery('body').removeClass('noscroll');
+        }
+    },
+        mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+
+        zoom: {
+            enabled: true, // By default it's false, so don't forget to enable it
+
+            duration: 300, // duration of the effect, in milliseconds
+            easing: 'ease-in-out', // CSS transition easing function
+
+            // The "opener" function should return the element from which popup will be zoomed in
+            // and to which popup will be scaled down
+            // By defailt it looks for an image tag:
+            opener: function(openerElement) {
+                // openerElement is the element on which popup was initialized, in this case its <a> tag
+                // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+                return openerElement.is('img') ? openerElement : openerElement.find('img');
+            }
+        }
     });
 });
 

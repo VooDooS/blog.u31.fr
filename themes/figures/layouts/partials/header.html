@@ -7,9 +7,10 @@
     <script src="{{ .Site.BaseURL }}js/jquery-3.2.1.min.js"></script>
     <script src="{{ .Site.BaseURL }}js/main.js"></script>
     <script charset="utf-8" src="{{ .Site.BaseURL }}js/highlight.js.min.js"></script> <!-- Weird ut8 needed -->
+    <script src="{{ .Site.BaseURL }}js/magnific-popup.min.js"></script>
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/main.min.css" />
     <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/dracula.css" />
-    <link  type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="{{ .Site.BaseURL }}css/magnific-popup.css" />
     {{ if .RSSLink }}
     <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
     <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
@@ -17,3 +18,4 @@
 </head>
 <body {{ with .Params.bodyclass }} class="{{ . }}" {{ end }}>
 <script></script>
+
