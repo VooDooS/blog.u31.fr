@@ -2,11 +2,11 @@
 <div class="post-wrapper">
 {{ partial "hero.html" . }}
 <section id="post" class="section post-row">
-    <div id="left-column" class="post-aside post-aside-1 content" onscroll="centerFigure();">
+    <div id="left-column" class="post-aside post-aside-1 content" onscroll="syncScroll();">
         {{ .Content }}
     </div>
     <div id="right-column" class="post-aside post-aside-2 is-hidden-mobile">
-        <div class="filler">&nbsp;</div>
+        <!--<div class="filler">&nbsp;</div>-->
         <div class="filler">&nbsp;</div>
     </div>
     </section>

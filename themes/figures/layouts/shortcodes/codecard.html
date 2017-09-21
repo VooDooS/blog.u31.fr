@@ -1,7 +1,7 @@
 <a {{ $h := md5 .Inner }} data-id="{{ $h }}" data-description="{{ .Get 1 }}"  data-lang="{{ if len .Params | eq 3 }}{{ .Get 2 }}{{ end }}" data-code="{{- trim .Inner "\n\t " -}}"
    class="floating-card-me floating-code button code-btn is-info is-outlined is-small" onclick="flash('{{ $h }}');">
     <span class="txt">{{ .Get 0 }}</span>
-        <span data-id="{{ $h }}" class="code-handle icon">
+        <span data-id="{{ $h }}" class="card-handle code-handle icon">
         <i class="fa fa-code is-hidden-mobile"></i>
     </span>
 </a><figure class="code card is-hidden-tablet">

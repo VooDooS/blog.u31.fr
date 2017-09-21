@@ -4,59 +4,74 @@
 
 
 $( document ).ready(function() {
-    var images = [];
-
-    // IMAGES
-    $(".img-card-link").each(function (i) {
+    // We need to scan the DOM to look for elements that need to be copied on the right side :
+    $(".card-handle").each(function () {
         var elt = $(this);
 
-        // For each url that should be displayed in a card :
-        var figure = $("<figure>", {'data-id': elt.data('id'), "class": "floating-card floating-img card is-hidden-mobile"});
+        // The common elements to all figures :
+        var figure = $("<figure>", {"class": "floating-card card is-hidden-mobile"});
         var div = $("<div>", {'class': 'card-content'});
-        var img = elt.next('img').clone();
-        var url = img.attr('src');
-        var alt = img.attr('alt');
-        var a = $("<a>", {'class': 'image-pop-link', 'href': url});
-        a.append(img);
-        div.append(a);
 
-        if(alt != "") {
-            div.append($("<div class='card-caption'>").append(alt));
+
+        // If it's a link :
+        if(elt.hasClass("url-card")) {
+            figure.addClass('floating-url');
+
+            // The link should be a child of the handle
+            var url = elt.children("a").attr('href');
+
+            // If this link as a name :
+            if(elt.data('alt') != "") {
+                div.append(elt.data('alt')+': ');
+            }
+
+            // The link in itself
+            div.append('<a href="'+url+'" target="_blank">'+url+'</a>');
         }
 
+
+        // If it's an image :
+        if(elt.hasClass('img-card-link')) {
+            figure.addClass('floating-img');
+            
+            var img = elt.next('img').clone();
+            var url = img.attr('src');
+            var alt = img.attr('alt');
+            var a = $("<a>", {'class': 'image-pop-link', 'href': url});
+            a.append(img);
+            div.append(a);
+
+            if(alt != "") {
+                div.append($("<div class='card-caption'>").append(alt));
+            }
+
+            // Adding the flashing :
+            elt.click(function() { flashCard(figure); });
+        }
+
+        // If it a code :
+        if (elt.hasClass('code-card-link')) {
+            figure.addClass('floating-code');
+
+            // We look for the nearet code-block (may be in a parent) :
+            var codePreOrig = elt.parents().nextAll('pre:first');
+            var codePre = codePreOrig.clone();
+
+            codePreOrig.addClass('is-hidden-tablet');
+
+            div.append(codePre);
+
+            var dataAlt;
+            if ((dataAlt = elt.data('alt')) != '') {
+                div.append($("<div class='card-caption'>").append(dataAlt));
+            }
+        }
+
+
+        // Now we attach the newly created figure to the right column :
         figure.append(div);
-
-        img.onload = function()
-        {
-            var width = this.naturalWidth;
-            alert(width);
-        }
-        // Adding the image to the image array for photoswipe gallery
-        images.push({src: img.attr('src'), w: 100, h: 100});
-
         $(".post-aside-2 .filler:last").before(figure);
     });
-
-    // LIENS
-    $(".url-card").each(function (i) {
-        var elt = $(this);
-
-       // For each url that should be displayed in a card :
-        var figure = $("<figure>", {'data-id': elt.data('id'), "class": "floating-card floating-url card is-hidden-mobile"});
-        var div = $("<div>", {'class': 'card-content'});
-        var url = elt.children("a").attr('href');
-
-        if(elt.data('alt') != "") {
-            div.append(elt.data('alt')+': <a href="'+url+'">'+url+'</a>');
-        }
-        else {
-            div.append('<a href="'+url+'">'+url+'</a>');
-        }
-        figure.append(div);
-
-        $(".post-aside-2 .filler:last").before(figure);
-    });
-
 
     // CODE
     $(".floating-card-me").each (function (i) {
@@ -87,7 +102,7 @@ $( document ).ready(function() {
             div.append('<a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>');
             div.append('<pre><code class="'+elt.data('lang')+'">'+elt.data('code')+'<!--{{ highlight .Inner (.Get 2) "" }}--></code></pre>');
 
-            div.append('<div class="content">'+elt.data('description')+'</div>');
+            div.append('<div class="content card-caption">'+elt.data('description')+'</div>');
 
             figure.append(div);
 
@@ -100,7 +115,7 @@ $( document ).ready(function() {
             hljs.highlightBlock(block);
         });
 
-    
+    // Initializing image gallery :
     $('.image-pop-link').magnificPopup({
         // main options
         type: 'image',
@@ -140,38 +155,38 @@ $( document ).ready(function() {
 });
 
 
-function centerFigure(force, did) {
-    rc = $(".post-aside-2");
-    $(".code-handle").each(function(i) {
-        ch =$(this);
-        wh = $(window).height();
-        if ( (ch.offset().top > 2.5 * wh / 6 && ch.offset().top < 3.5 * wh / 6) || force ) {
-            if (force)
-                id = did;
-            else
-                id = ch.data('id');
-            cb = $('.floating-code[data-id="' + id + '"]');
-            // alert($('.floating-code[data-id="'+that.data('id')+'"]').data('id'));
-            //alert(cb.offset().top);
-            //document.getElementById("right-column").scrollTop += cb.offset().top - ($(window).height() / 2 - cb.height()/2);
-            newST = /*rc.scrollTop() +*/ cb.position().top;// - (rc.height() / 2 - cb.height() / 2);// - ($(window).height() / 2 - cb.height() / 2);// - ($(window).height() / 2 - cb.height() / 2);
-            //alert(id+' '+rc.scrollTop() +' ' +  cb.position().top+' '+newST);
-            //alert(rc.scrollTop() + '+++++'+ cb.position().top+'+++++++'+$(window).height());$
-            //alert(newST);
+function flash(did) {
+    flashCard($('figure.floating-code[data-id="'+did+'"]'));
+}
 
-            //alert(rc.height());
-            $(".post-aside-2").stop().animate({scrollTop: newST}, 500, 'swing', function () {
-                //alert("Finished animating");
-            });
-        }
+function flashCard(card) {
+    var caption = card.find('.card-caption');
+    centerCard(card);
+    //alert(caption.html());
+    caption.addClass('animPulse');
+    setTimeout(function(){
+        caption.removeClass('animPulse');
+    }, 1000);
+}
+
+function centerCard(card) {
+    var rightcolumn = $(".post-aside-2");
+    var newST = /*rc.scrollTop() +*/ card.position().top;
+    newST = card.position().top + card.parent().scrollTop() - (card.parent().offset().top +20); //(card.parent().height() / 2.) + (card.height() / 2.);
+
+    //alert(card.height());
+    rightcolumn.stop().animate({scrollTop: newST}, 500, 'swing', function () {
+        //alert("Finished animating");
     });
 }
 
-function flash(did) {
-    centerFigure(true, did);
-    $('figure.floating-code[data-id="'+did+'"]').addClass('animPulse');
-    setTimeout(function(){
-        $('figure.floating-code[data-id="'+did+'"]').removeClass('animPulse');
-    }, 1000);
-
+function syncScroll() {
+    // We check if a card element link is at the vertical center of the screen.
+    $(".card-handle").each(function(i) {
+        ch =$(this);
+        wh = $(window).height();
+        if (ch.offset().top > 2.5 * wh / 6 && ch.offset().top < 3.5 * wh / 6) {
+            centerCard($('.floating-card[data-id="' + ch.data('id') + '"]'));
+        }
+    });
 }
