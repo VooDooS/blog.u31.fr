@@ -2,6 +2,25 @@
   display: flex
   height: 15rem
 
+  a
+    font-size: 150%
+    color: black
+    &:hover, .active
+      &:before, &:after
+        color: black
+      &:before
+        content: "{ "
+        position: absolute
+        top: -0.09rem
+        left: -1rem
+        z-index: 100
+      &:after
+        content: " } "
+        position: absolute
+        top: -0.08rem
+        right: -0.9rem
+        z-index: 100
+
   .myNav-center
     height: 100%
     margin-left: auto

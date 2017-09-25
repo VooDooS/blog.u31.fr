@@ -33,7 +33,7 @@ The most common (and probably a very good one) option is Jekyll. It's the most f
 
 {{< urlcard "Jekyll" >}}https://jekyllrb.com/{{< /urlcard >}} have a bigger user base and more complete documentation. Blog posts are also more numerous. It’s surely is a more mature solution.
 
-One the other hand [Hugo](https://gohugo.io/) claims do be easier to install (no Ruby business) and way faster to generate thanks to it being written in [Go](https://golang.org/). But it’s documentation seem a bit loose and community tutorial are less numerous.
+One the other hand <span class="card-handle url-card" data-alt="Hugo's official website">[Hugo](https://gohugo.io/)</a> claims do be easier to install (no Ruby business) and way faster to generate thanks to it being written in [Go](https://golang.org/). But it’s documentation seem a bit loose and community tutorial are less numerous.
 
 Both would have perfectly fill my needs but I still decided to go for Hugo, because I was intrigued by the Go language and if I was going to write a nième tutorial it would be best to do it for le less documented platform. If you want to spare for headache, you may consider to go for Jekyll instead.
 
@@ -49,38 +49,45 @@ There are [extensive instructions](https://gohugo.io/getting-started/installing/
 
 I'm under Debian Stretch (actual stable version) which is supporting Snap packages. If you don't have Snap installed use :
 
-{{< code bash >}}apt-get install snapd{{< /code >}}
+```bash
+apt-get install snapd
+```
 
 And then install Hugo with :
 
-{{< code bash >}}snap install hugo{{< /code >}}
+~~~bash
+snap install hugo
+~~~
 
 If your system does not support Snap, you can dowload a pre-compiled binary from the [latest release](https://github.com/gohugoio/hugo/releases) or compile Hugo yourself from [source](https://github.com/gohugoio/hugo).
 
 You can test your installation with the `hugo version` command.
 
 # Hello world
+Let's create a <a class="card-handle code-card-link" data-alt="Creation commands">new site and theme.</a>
 
-Let's create a {{< codecard "new site and theme." "Creation commands" bash >}}
+~~~bash
 # Create a folder named mySite with the skeleton inside :
 hugo new site mySite
 # Create a new theme myTheme in the Themes directory :
 hugo new theme myTheme
-{{< /codecard >}}
+~~~
 
 When initializing the site Hugo created a config file, you should at list correct the name of your website and add the customized theme. A complete list of option is available [here](https://gohugo.io/getting-started/configuration/#all-variables-yaml).
 
-Here is my {{< codecard "configuration file." "Hugo's configuration file in toml" toml >}}
+Here is my <a class="card-handle code-card-link" data-alt="Hugo's configuration file in toml">configuration file.</a>
+
+~~~toml
 baseURL = "http://blog.u31.fr/"
 languageCode = "en-us"
 title = "Blog31"
-theme = "figures"
+theme = "fig`ures"
 
 [blackfriday]
 # Github like linebreaks
 extensions = ["hardLineBreak"]
 hrefTargetBlank = true
-{{< /codecard >}}
+~~~
 
 
 

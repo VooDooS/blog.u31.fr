@@ -1,6 +1,16 @@
 /* STYLES GÉNÉRAUX */
 .card
-  margin-bottom: 3rem
+  margin-top:  2rem
+  margin-bottom: 2rem
+
+  .hljs
+    padding: 1em
+  a.btn-copy
+    position: absolute
+    right: 0
+    border-radius: 0px 10px 0px 10px
+    border: 0px
+
 .card-content
   padding: 0rem
   text-align: left
@@ -27,25 +37,41 @@
 
   padding: 0.2rem
 
-  //padding-right: 0.8rem
-  //font-size: 1rem
+  &:after
+    @extend .icon
+    @extend .fa
+    position: relative
+    top: 4px
+
+
+  +mobile
+    display: inline !important
+    border: none!important
+    white-space: normal !important
+    position: static
+    color: inherit
+    margin-right: -1.7rem
+
+    &:after
+      content: '' !important
+
+
+a.code-card-link
+  @extend .card-link
+  @extend .is-info
+
+  &:after
+    content: "\f121"
+
+
 
 a.img-card-link
   @extend .card-link
   @extend .is-primary
 
-  +mobile
-    display: inline
-    border: none
-    white-space: normal
 
   &:after
-    @extend .icon
-    @extend .fa
-    @extend .fa-picture-o
     content: "\f03e"
-    position: relative
-    top: 4px
 
 
   + img
@@ -61,3 +87,18 @@ a.img-card-link
 .floating-img img
   display: block
   border-bottom: solid 1px #bebcbc
+
+
+.animPulse
+    animation-iteration-count: 2
+    animation: pulse 0.5s 2
+
+@keyframes pulse
+  0%
+    background-color: #FFF
+
+  50%
+    background-color: #ffcccc
+
+  100%
+    background-color: #FFF

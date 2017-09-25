@@ -59,55 +59,26 @@ $( document ).ready(function() {
 
             codePreOrig.addClass('is-hidden-tablet');
 
+            div.append('<a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>');
             div.append(codePre);
 
             var dataAlt;
             if ((dataAlt = elt.data('alt')) != '') {
                 div.append($("<div class='card-caption'>").append(dataAlt));
             }
+
+            // Adding the flashing :
+            elt.click(function() { flashCard(figure); });
         }
+
+        elt.on('centerCard', function () {
+           centerCard(figure);
+        });
 
 
         // Now we attach the newly created figure to the right column :
         figure.append(div);
         $(".post-aside-2 .filler:last").before(figure);
-    });
-
-    // CODE
-    $(".floating-card-me").each (function (i) {
-       var elt = $(this);
-
-        // We create the correct floating card, et add it to the right column :
-        if(elt.hasClass("floating-url")) {
-            var figure = $("<figure>", {'data-id': elt.data('id'), "class": "floating-card floating-url card is-hidden-mobile"});
-            var div = $("<div>", {'class': 'card-content'});
-            var url = elt.data('url');
-
-
-            if(elt.data('title') != "") {
-                div.append(elt.data('title')+': <a href="'+url+'">'+url+'</a>');
-            }
-            else {
-                div.append('<a href="'+url+'">'+url+'</a>');
-            }
-            figure.append(div);
-
-            $(".post-aside-2 .filler:last").before(figure);
-        }
-        else if(elt.hasClass("floating-code")) {
-            var figure = $("<figure>", {'data-id': elt.data('id'), "class": "floating-card floating-code code card is-hidden-mobile"});
-            var div = $("<div>", {'class': 'card-content'});
-
-            // The copy button :
-            div.append('<a class="btn-copy button is-info is-small"  onclick="copyToClipboard($(this).next())">Copy</a>');
-            div.append('<pre><code class="'+elt.data('lang')+'">'+elt.data('code')+'<!--{{ highlight .Inner (.Get 2) "" }}--></code></pre>');
-
-            div.append('<div class="content card-caption">'+elt.data('description')+'</div>');
-
-            figure.append(div);
-
-            $(".post-aside-2 .filler:last").before(figure);
-        }
     });
 
     // Everything's ready for highlighting :
@@ -169,15 +140,15 @@ function flashCard(card) {
     }, 1000);
 }
 
+var actualCard;
 function centerCard(card) {
     var rightcolumn = $(".post-aside-2");
-    var newST = /*rc.scrollTop() +*/ card.position().top;
-    newST = card.position().top + card.parent().scrollTop() - (card.parent().offset().top +20); //(card.parent().height() / 2.) + (card.height() / 2.);
 
-    //alert(card.height());
-    rightcolumn.stop().animate({scrollTop: newST}, 500, 'swing', function () {
-        //alert("Finished animating");
-    });
+    if(actualCard != card) {
+        var newST = card.position().top + card.parent().scrollTop() - (card.parent().offset().top - 20);
+        rightcolumn.stop().animate({scrollTop: newST}, 1000, 'swing');
+        actualCard = card;
+    }
 }
 
 function syncScroll() {
@@ -186,7 +157,7 @@ function syncScroll() {
         ch =$(this);
         wh = $(window).height();
         if (ch.offset().top > 2.5 * wh / 6 && ch.offset().top < 3.5 * wh / 6) {
-            centerCard($('.floating-card[data-id="' + ch.data('id') + '"]'));
+            ch.trigger('centerCard');//$('.floating-card[data-id="' + ch.data('id') + '"]'));
         }
     });
 }
