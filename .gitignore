@@ -2,3 +2,4 @@
 --watch
 *.DS_Store
 *.sass-cache
+public/
